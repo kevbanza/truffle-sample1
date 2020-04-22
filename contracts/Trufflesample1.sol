@@ -15,6 +15,14 @@ contract Trufflesample1 {
   // tasks work as a database
 
 
+  // creation of the event event element will be inside here
+	event TaskCreated(
+		uint id,
+		string content,
+		bool completed
+	);
+
+
   constructor() public{
   	createTask("check out TodoList");
   }
@@ -28,6 +36,10 @@ contract Trufflesample1 {
   		// _content vient de l'application
   		// in tasks we have an assos array with those
   		// 3 elements
+  
+  		//********************************//
+  		//creation of a task ///will send element to the event really
+  		emit TaskCreated(taskCount, _content, false);
   }
   	
   

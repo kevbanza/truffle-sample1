@@ -115,11 +115,15 @@ renderTasks: async ()=>{
 	      $newTaskTemplate.show()
 	}
 
-	
-
-
 },
 
+// creation of task add task
+createTask: async()=>{
+	App.setLoading(true)
+	const content = $('#newTask').val()
+	await App.trufflesample.createTask(content)
+	window.location.reload()
+},
 
 
 
